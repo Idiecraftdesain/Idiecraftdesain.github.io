@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IDIE CRAFT DESAIN — Jasa Desain Logo Orisinal (Tailwind)</title>
+<meta name="description" content="IDIE CRAFT DESAIN merancang logo orisinal, estetis, dan punya filosofi untuk UMKM, mahasiswa, dan brand muda. Harga ramah, revisi fleksibel, file lengkap siap cetak.">
+<meta name="theme-color" content="#0B0B0F">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><rect width='48' height='48' fill='%230B0B0F'/><path d='M17 8A16 16 0 0 1 17 40V8Z' fill='%23F4F1EA'/><rect x='12' y='8' width='4' height='32' fill='%23F4F1EA'/></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- ============================================================
+     TAILWIND CSS (Play CDN)
+     Catatan: ini versi CDN, cocok untuk development & perbandingan.
+     Untuk produksi, ganti dengan hasil build CLI (lihat README).
+     ============================================================ -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script>
+/* ============================================================================
+   KONFIGURASI TAILWIND
+   ----------------------------------------------------------------------------
+   SEMUA warna di bawah mengacu ke CSS variable di custom.css (:root).
+   Jadi buat ganti tema, kalian CUMA perlu ubah 9 baris di file itu.
+   Utility Tailwind (bg-bg, text-ink, border-line, dst) otomatis ikut.
+   ========================================================================== */
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        bg:       'var(--c-bg)',
+        surface:  'var(--c-surface)',
+        surface2: 'var(--c-surface-2)',
+        ink:      'var(--c-text)',
+        muted:    'var(--c-muted)',
+        line:     'var(--c-line)',
+        accent:   'var(--c-accent)',
+        accent2:  'var(--c-accent-2)',
+        onaccent: 'var(--c-on-accent)'
+      },
+      fontFamily: {
+        sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Arial', 'sans-serif']
+      },
+      maxWidth: { page: '1180px' },
+      borderRadius: { xl2: '18px', xl3: '28px' },
+      boxShadow: {
+        soft: '0 10px 30px rgba(0,0,0,.28)',
+        lift: '0 24px 60px rgba(0,0,0,.45)'
+      },
+      keyframes: {
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%':      { transform: 'translateY(-14px)' }
+        },
+        drift: {
+          '0%':   { transform: 'translate3d(0,0,0) scale(1)' },
+          '50%':  { transform: 'translate3d(40px,-30px,0) scale(1.1)' },
+          '100%': { transform: 'translate3d(-30px,40px,0) scale(.95)' }
+        },
+        breathe: {
+          '0%, 100%': { transform: 'scale(1)' },
+          '50%':      { transform: 'scale(1.04)' }
+        },
+        marquee: {
+          from: { transform: 'translateX(0)' },
+          to:   { transform: 'translateX(-50%)' }
+        },
+        cue: {
+          '0%, 100%': { transform: 'translateY(0)',    opacity: '1' },
+          '50%':      { transform: 'translateY(12px)', opacity: '.25' }
+        },
+        pulseRing: {
+          '0%, 100%': { boxShadow: '0 0 0 4px color-mix(in srgb, var(--c-accent) 20%, transparent)' },
+          '50%':      { boxShadow: '0 0 0 9px color-mix(in srgb, var(--c-accent) 4%, transparent)' }
+        }
+      },
+      animation: {
+        float:        'float 7s ease-in-out infinite',
+        'float-slow': 'float 7s ease-in-out -3.5s infinite',
+        drift:        'drift 18s ease-in-out infinite alternate',
+        'drift-slow': 'drift 22s ease-in-out -8s infinite alternate',
+        breathe:      'breathe 6s ease-in-out infinite',
+        marquee:      'marquee 34s linear infinite',
+        cue:          'cue 1.8s ease-in-out infinite',
+        'pulse-ring': 'pulseRing 2.4s infinite'
+      }
+    }
+  }
+};
+</script>
+
+<link rel="stylesheet" href="assets/css/custom.css">
+</head>
+
+<body class="bg-bg text-ink font-sans antialiased overflow-x-hidden selection:bg-accent selection:text-onaccent">
+
+<!-- progress bar -->
+<div class="scroll-progress" aria-hidden="true"><span></span></div>
+<!-- glow kursor -->
+<div class="cursor-glow" aria-hidden="true"></div>
+
+<!-- ============================ HEADER ============================ -->
+<header id="siteHeader" class="site-header fixed inset-x-0 top-0 z-[100] py-5">
+  <div class="mx-auto flex w-full max-w-page items-center justify-between gap-6 px-6">
+
+    <a href="#hero" class="brand flex items-center gap-3 text-ink" aria-label="IDIE CRAFT DESAIN">
+      <svg class="brand-mark h-[34px] w-[34px]" viewBox="0 0 48 48" aria-hidden="true">
+        <path d="M17 6A18 18 0 0 1 17 42V6Z" fill="currentColor"/>
+        <rect x="11.5" y="6" width="4.5" height="36" fill="currentColor"/>
+      </svg>
+      <span class="flex flex-col leading-none">
+        <strong class="text-[.98rem] font-extrabold tracking-[.1em]">IDIE CRAFT</strong>
+        <em class="mt-[5px] text-[.52rem] not-italic tracking-[.42em] text-muted">— DESAIN —</em>
+      </span>
+    </a>
+
+    <nav id="primaryNav" class="nav flex items-center gap-[30px]">
+      <a href="#about"    class="nav-link text-[.9rem] font-medium text-muted transition-colors hover:text-ink">Tentang</a>
+      <a href="#services" class="nav-link text-[.9rem] font-medium text-muted transition-colors hover:text-ink">Layanan</a>
+      <a href="#work"     class="nav-link text-[.9rem] font-medium text-muted transition-colors hover:text-ink">Portofolio</a>
+      <a href="#process"  class="nav-link text-[.9rem] font-medium text-muted transition-colors hover:text-ink">Proses</a>
+      <a href="#pricing"  class="nav-link text-[.9rem] font-medium text-muted transition-colors hover:text-ink">Harga</a>
+      <a href="#faq"      class="nav-link text-[.9rem] font-medium text-muted transition-colors hover:text-ink">FAQ</a>
+      <a href="#contact"  class="btn-primary ml-2.5 rounded-full px-[18px] py-2.5 text-[.85rem] font-semibold">Konsultasi Gratis</a>
+    </nav>
+
+    <button id="navToggle" class="nav-toggle" aria-label="Buka menu" aria-expanded="false" aria-controls="primaryNav">
+      <span></span><span></span><span></span>
+    </button>
+
+  </div>
+</header>
+
+<main>
+
+  <!-- ============================ HERO ============================ -->
+  <section id="hero" class="relative flex min-h-[100svh] items-center overflow-hidden pb-[90px] pt-[150px] max-md:min-h-0 max-md:pt-[132px] max-md:pb-20">
+
+    <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+      <span class="orb orb-1 animate-drift"></span>
+      <span class="orb orb-2 animate-drift-slow"></span>
+      <span class="orb orb-3 animate-drift"></span>
+      <div class="grid-lines"></div>
+      <div class="noise"></div>
+    </div>
+
+    <div class="relative z-[2] mx-auto grid w-full max-w-page grid-cols-1 items-center gap-11 px-6 lg:grid-cols-[1.08fr_.92fr] lg:gap-16">
+
+      <!-- kiri -->
+      <div>
+        <span class="reveal mb-6 inline-flex items-center gap-2.5 rounded-full border border-line bg-white/[.03] py-2 pl-3 pr-4 text-[.82rem] font-medium text-muted">
+          <span class="dot"></span> Studio desain logo untuk brand muda
+        </span>
+
+        <h1 class="reveal mb-6 text-[clamp(2.4rem,5.1vw,4.1rem)] font-extrabold leading-[1.05] tracking-[-.035em]" style="--d:.08s">
+          Logo orisinal yang bikin brand kamu
+          <span class="grad-text">diingat, bukan dilewati.</span>
+        </h1>
+
+        <p class="reveal mb-9 max-w-[52ch] text-[1.04rem] leading-relaxed text-muted" style="--d:.16s">
+          IDIE CRAFT DESAIN merancang identitas visual yang estetis, punya filosofi,
+          dan 100% buatan sendiri — bukan template marketplace. Dirancang untuk
+          UMKM, mahasiswa, dan brand yang baru mulai.
+        </p>
+
+        <div class="reveal mb-14 flex flex-wrap gap-3.5" style="--d:.24s">
+          <a href="#contact" class="btn-primary inline-flex items-center justify-center gap-2.5 rounded-full px-[26px] py-[15px] text-[.95rem] font-semibold">
+            Mulai Konsultasi
+            <svg class="h-[18px] w-[18px]" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#work" class="btn-ghost inline-flex items-center justify-center rounded-full px-[26px] py-[15px] text-[.95rem] font-semibold">Lihat Portofolio</a>
+        </div>
+
+        <ul class="reveal flex gap-[46px] border-t border-line pt-[30px] max-sm:flex-wrap max-sm:gap-x-5 max-sm:gap-y-6" style="--d:.32s">
+          <li class="max-sm:w-[calc(50%-10px)]"><strong class="block text-[1.7rem] font-extrabold tracking-[-.03em] max-sm:text-[1.45rem]" data-count="350" data-suffix="+">0</strong><span class="text-[.8rem] text-muted">Proyek logo</span></li>
+          <li class="max-sm:w-[calc(50%-10px)]"><strong class="block text-[1.7rem] font-extrabold tracking-[-.03em] max-sm:text-[1.45rem]" data-count="98" data-suffix="%">0</strong><span class="text-[.8rem] text-muted">Klien puas</span></li>
+          <li class="max-sm:w-[calc(50%-10px)]"><strong class="block text-[1.7rem] font-extrabold tracking-[-.03em] max-sm:text-[1.45rem]" data-count="3" data-suffix=" hari">0</strong><span class="text-[.8rem] text-muted">Waktu pengerjaan</span></li>
+        </ul>
+      </div>
+
+      <!-- kanan -->
+      <div class="reveal relative flex justify-center [perspective:1000px]" style="--d:.2s" aria-hidden="true">
+
+        <div class="showcase tilt relative flex aspect-[4/4.6] w-full max-w-[370px] flex-col overflow-hidden rounded-xl3 border border-line p-[26px]">
+          <div class="relative z-[2] flex items-center justify-between">
+            <span class="chip-accent rounded-full px-3 py-1.5 text-[.62rem] font-bold tracking-[.3em] text-accent">IDIE</span>
+            <span class="rounded-full border border-line px-3 py-1.5 text-[.62rem] font-bold tracking-[.12em] text-muted">v. 2026</span>
+          </div>
+
+          <div class="relative z-[2] flex flex-1 place-items-center items-center justify-center text-ink">
+            <svg class="h-auto w-[46%] animate-breathe drop-shadow-xl" viewBox="0 0 48 48">
+              <path d="M17 6A18 18 0 0 1 17 42V6Z" fill="currentColor"/>
+              <rect x="11.5" y="6" width="4.5" height="36" fill="currentColor"/>
+            </svg>
+          </div>
+
+          <div class="relative z-[2] text-center">
+            <strong class="block text-[1.22rem] font-extrabold tracking-[.18em]">IDIE CRAFT</strong>
+            <span class="text-[.58rem] tracking-[.46em] text-muted">— D E S A I N —</span>
+          </div>
+
+          <div class="relative z-[2] mt-[22px] flex gap-1.5">
+            <i class="h-[3px] w-[86%] rounded-full bg-accent"></i>
+            <i class="bar-soft h-[3px] w-[64%] rounded-full"></i>
+            <i class="bar-soft h-[3px] w-[42%] rounded-full"></i>
+          </div>
+        </div>
+
+        <div class="float-card float-1 animate-float">
+          <span class="icon-tint grid h-8 w-8 place-items-center rounded-[10px] text-[.9rem] text-accent">✦</span>
+          <div><strong class="block text-[.82rem] font-bold">100% Orisinal</strong><small class="text-[.68rem] text-muted">Tanpa template</small></div>
+        </div>
+
+        <div class="float-card float-2 animate-float-slow">
+          <span class="icon-tint grid h-8 w-8 place-items-center rounded-[10px] text-[.9rem] text-accent">↻</span>
+          <div><strong class="block text-[.82rem] font-bold">3× Revisi</strong><small class="text-[.68rem] text-muted">Fleksibel</small></div>
+        </div>
+      </div>
+    </div>
+
+    <a href="#marquee" class="scroll-cue" aria-label="Gulir ke bawah"><span class="animate-cue"></span></a>
+  </section>
+
+  <!-- ============================ MARQUEE ============================ -->
+  <section id="marquee" class="overflow-hidden border-y border-line bg-white/[.02] py-[22px]" aria-hidden="true">
+    <div class="marquee overflow-hidden">
+      <div class="marquee-track flex w-max animate-marquee items-center gap-[34px]">
+        <span>Logo UMKM</span><i>✦</i><span>Brand Kopi</span><i>✦</i><span>Online Shop</span><i>✦</i>
+        <span>Personal Branding</span><i>✦</i><span>Logo Komunitas</span><i>✦</i><span>Event Kampus</span><i>✦</i>
+        <span>Logo UMKM</span><i>✦</i><span>Brand Kopi</span><i>✦</i><span>Online Shop</span><i>✦</i>
+        <span>Personal Branding</span><i>✦</i><span>Logo Komunitas</span><i>✦</i><span>Event Kampus</span><i>✦</i>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ ABOUT ============================ -->
+  <section id="about" class="section py-[120px] max-md:py-[88px]">
+    <div class="mx-auto grid w-full max-w-page grid-cols-1 items-start gap-16 px-6 lg:grid-cols-[.85fr_1.15fr] lg:gap-[72px]">
+
+      <div>
+        <span class="section-label reveal">01 — Tentang Kami</span>
+        <h2 class="reveal text-[clamp(1.9rem,3.6vw,2.85rem)] font-extrabold leading-[1.12] tracking-[-.02em]" style="--d:.06s">
+          Desain yang lahir dari <em class="italic text-accent">brief</em>, bukan dari template.
+        </h2>
+      </div>
+
+      <div>
+        <p class="reveal mb-5 text-[1.12rem] leading-[1.7]" style="--d:.1s">
+          Banyak usaha kecil punya produk bagus tapi identitas visual yang belum layak —
+          kebanyakan cuma tulisan biasa atau gambar dari internet. Padahal logo adalah
+          hal pertama yang orang lihat dan ingat.
+        </p>
+        <p class="reveal mb-5 text-muted" style="--d:.16s">
+          IDIE CRAFT DESAIN hadir untuk menutup jarak itu. Kami percaya brand kecil
+          berhak dapat desain sekelas agensi tanpa harus menanggung harga agensi.
+          Setiap logo dikerjakan dari nol: dimulai dari obrolan soal cerita brand,
+          sketsa manual, digitalisasi, sampai file final siap cetak.
+        </p>
+
+        <div class="mt-10 grid grid-cols-1 gap-3.5 sm:grid-cols-2">
+          <div class="mini-card reveal rounded-xl2 border border-line bg-surface p-[22px]" style="--d:.2s">
+            <span class="text-[.72rem] font-bold tracking-[.16em] text-accent">01</span>
+            <h3 class="mb-1.5 mt-2.5 text-base font-bold">Berbasis cerita</h3>
+            <p class="m-0 text-[.87rem] text-muted">Logo dibuat dari nilai dan karakter brand kamu, bukan tren sesaat.</p>
+          </div>
+          <div class="mini-card reveal rounded-xl2 border border-line bg-surface p-[22px]" style="--d:.26s">
+            <span class="text-[.72rem] font-bold tracking-[.16em] text-accent">02</span>
+            <h3 class="mb-1.5 mt-2.5 text-base font-bold">Harga mahasiswa</h3>
+            <p class="m-0 text-[.87rem] text-muted">Paket mulai Rp50.000 dengan kualitas yang tetap profesional.</p>
+          </div>
+          <div class="mini-card reveal rounded-xl2 border border-line bg-surface p-[22px]" style="--d:.32s">
+            <span class="text-[.72rem] font-bold tracking-[.16em] text-accent">03</span>
+            <h3 class="mb-1.5 mt-2.5 text-base font-bold">File lengkap</h3>
+            <p class="m-0 text-[.87rem] text-muted">JPG, PNG transparan, PDF siap cetak, plus vektor untuk kebutuhan apa pun.</p>
+          </div>
+          <div class="mini-card reveal rounded-xl2 border border-line bg-surface p-[22px]" style="--d:.38s">
+            <span class="text-[.72rem] font-bold tracking-[.16em] text-accent">04</span>
+            <h3 class="mb-1.5 mt-2.5 text-base font-bold">Proses transparan</h3>
+            <p class="m-0 text-[.87rem] text-muted">Update progres berkala, revisi jelas, tanpa biaya kejutan.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ SERVICES ============================ -->
+  <section id="services" class="section border-y border-line bg-white/[.024] py-[120px] max-md:py-[88px]">
+    <div class="mx-auto w-full max-w-page px-6">
+
+      <div class="mx-auto mb-16 max-w-[660px] text-center max-md:mb-11">
+        <span class="section-label reveal">02 — Layanan</span>
+        <h2 class="reveal text-[clamp(1.9rem,3.6vw,2.85rem)] font-extrabold leading-[1.12] tracking-[-.02em]" style="--d:.06s">Yang bisa kami kerjakan</h2>
+        <p class="reveal mt-4 text-[1.02rem] text-muted" style="--d:.12s">
+          Fokus utama kami desain logo, tapi kami juga bantu kebutuhan visual
+          pendukung supaya brand kamu konsisten dari ujung ke ujung.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+
+        <article class="service-card reveal rounded-xl3 border border-line p-[30px] pt-[34px] transition-all" style="--d:.06s">
+          <div class="service-icon mb-[22px] grid h-[52px] w-[52px] place-items-center rounded-[15px] border border-line text-accent">
+            <svg class="h-6 w-6" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 7v10l8 4 8-4V7l-8-4Z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 12v9M12 12 4 7M12 12l8-5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <h3 class="text-[1.18rem] font-bold">Logo &amp; Identitas</h3>
+          <p class="text-[.92rem] text-muted">Logo utama, logo sekunder, palet warna, dan tipografi brand dalam satu sistem yang rapi.</p>
+          <ul class="mt-5 grid gap-2.5">
+            <li class="tick text-[.87rem] text-muted">2–3 konsep awal</li>
+            <li class="tick text-[.87rem] text-muted">Revisi sampai pas</li>
+            <li class="tick text-[.87rem] text-muted">Panduan warna dasar</li>
+          </ul>
+        </article>
+
+        <article class="service-card reveal rounded-xl3 border border-line p-[30px] pt-[34px] transition-all" style="--d:.14s">
+          <div class="service-icon mb-[22px] grid h-[52px] w-[52px] place-items-center rounded-[15px] border border-line text-accent">
+            <svg class="h-6 w-6" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 21h8M12 18v3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="text-[1.18rem] font-bold">Desain Pendukung</h3>
+          <p class="text-[.92rem] text-muted">Kartu nama, banner, menu, stiker, dan feed media sosial yang senada dengan logo kamu.</p>
+          <ul class="mt-5 grid gap-2.5">
+            <li class="tick text-[.87rem] text-muted">Ukuran siap cetak</li>
+            <li class="tick text-[.87rem] text-muted">Format edit terpisah</li>
+            <li class="tick text-[.87rem] text-muted">Konsistensi visual</li>
+          </ul>
+        </article>
+
+        <article class="service-card reveal rounded-xl3 border border-line p-[30px] pt-[34px] transition-all md:col-span-2 lg:col-span-1" style="--d:.22s">
+          <div class="service-icon mb-[22px] grid h-[52px] w-[52px] place-items-center rounded-[15px] border border-line text-accent">
+            <svg class="h-6 w-6" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20 20 4M13 4h7v7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6" cy="18" r="2" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <h3 class="text-[1.18rem] font-bold">Konsultasi Brand</h3>
+          <p class="text-[.92rem] text-muted">Sesi obrolan santai soal positioning, nama, dan arah visual sebelum mulai desain.</p>
+          <ul class="mt-5 grid gap-2.5">
+            <li class="tick text-[.87rem] text-muted">Gratis untuk klien</li>
+            <li class="tick text-[.87rem] text-muted">Lewat WhatsApp</li>
+            <li class="tick text-[.87rem] text-muted">Tanpa ikatan</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ PORTFOLIO ============================ -->
+  <section id="work" class="section py-[120px] max-md:py-[88px]">
+    <div class="mx-auto w-full max-w-page px-6">
+
+      <div class="mb-16 flex items-end justify-between gap-8 max-sm:mb-11 max-sm:flex-col max-sm:items-start">
+        <div>
+          <span class="section-label reveal">03 — Portofolio</span>
+          <h2 class="reveal text-[clamp(1.9rem,3.6vw,2.85rem)] font-extrabold leading-[1.12] tracking-[-.02em]" style="--d:.06s">Sebagian yang sudah kami buat</h2>
+        </div>
+        <a href="#contact" class="reveal inline-flex items-center gap-2 text-[.95rem] font-semibold text-accent transition-all hover:gap-3.5" style="--d:.1s">
+          Minta portofolio lengkap
+          <svg class="h-[18px] w-[18px]" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <!-- GANTI: isi .work-thumb dengan <img> hasil desain asli -->
+      <div class="grid grid-cols-1 gap-[18px] sm:grid-cols-2 lg:grid-cols-3">
+
+        <a href="#contact" class="work-card reveal rounded-xl2 border border-line bg-surface" style="--d:.04s; --tone1:#2A2117; --tone2:#4A3A26">
+          <div class="work-thumb"><span class="work-mark">K</span></div>
+          <div class="work-meta"><h3>Kopi Senja</h3><span>Coffee shop — Yogyakarta</span></div>
+        </a>
+
+        <a href="#contact" class="work-card reveal rounded-xl2 border border-line bg-surface" style="--d:.1s; --tone1:#132019; --tone2:#254237">
+          <div class="work-thumb"><span class="work-mark">L</span></div>
+          <div class="work-meta"><h3>Lumine Skin</h3><span>Skincare — Surabaya</span></div>
+        </a>
+
+        <a href="#contact" class="work-card reveal rounded-xl2 border border-line bg-surface" style="--d:.16s; --tone1:#201424; --tone2:#3B2546">
+          <div class="work-thumb"><span class="work-mark">F</span></div>
+          <div class="work-meta"><h3>Festa Kampus</h3><span>Event organisasi — Malang</span></div>
+        </a>
+
+        <a href="#contact" class="work-card reveal rounded-xl2 border border-line bg-surface" style="--d:.22s; --tone1:#241616; --tone2:#48292A">
+          <div class="work-thumb"><span class="work-mark">B</span></div>
+          <div class="work-meta"><h3>Bakso Pak Tono</h3><span>Kuliner — Semarang</span></div>
+        </a>
+
+        <a href="#contact" class="work-card reveal rounded-xl2 border border-line bg-surface" style="--d:.28s; --tone1:#101A26; --tone2:#22374D">
+          <div class="work-thumb"><span class="work-mark">N</span></div>
+          <div class="work-meta"><h3>Nusa Trails</h3><span>Travel — Bandung</span></div>
+        </a>
+
+        <a href="#contact" class="work-card reveal rounded-xl2 border border-line bg-surface" style="--d:.34s; --tone1:#1E1B10; --tone2:#3E361C">
+          <div class="work-thumb"><span class="work-mark">R</span></div>
+          <div class="work-meta"><h3>Roti Bu Ayu</h3><span>Bakery — Solo</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ PROCESS ============================ -->
+  <section id="process" class="section border-y border-line bg-white/[.024] py-[120px] max-md:py-[88px]">
+    <div class="mx-auto w-full max-w-page px-6">
+
+      <div class="mx-auto mb-16 max-w-[660px] text-center max-md:mb-11">
+        <span class="section-label reveal">04 — Proses</span>
+        <h2 class="reveal text-[clamp(1.9rem,3.6vw,2.85rem)] font-extrabold leading-[1.12] tracking-[-.02em]" style="--d:.06s">Empat langkah, dua sampai tiga hari</h2>
+        <p class="reveal mt-4 text-[1.02rem] text-muted" style="--d:.12s">
+          Tanpa ribet, tanpa istilah desain yang bikin bingung. Semua dijelaskan
+          dalam bahasa manusia.
+        </p>
+      </div>
+
+      <ol class="steps grid grid-cols-1 gap-9 sm:grid-cols-2 lg:grid-cols-4 lg:gap-[18px]">
+        <li class="step reveal" style="--d:.05s">
+          <span class="step-num mb-6 grid h-[68px] w-[68px] place-items-center rounded-full border border-line bg-bg text-[.95rem] font-extrabold tracking-[.04em] text-accent">01</span>
+          <h3 class="text-[1.08rem] font-bold">Konsultasi</h3>
+          <p class="text-[.88rem] text-muted">Kamu cerita soal brand, target pasar, dan selera visual. Kami catat semua kebutuhan.</p>
+        </li>
+        <li class="step reveal" style="--d:.15s">
+          <span class="step-num mb-6 grid h-[68px] w-[68px] place-items-center rounded-full border border-line bg-bg text-[.95rem] font-extrabold tracking-[.04em] text-accent">02</span>
+          <h3 class="text-[1.08rem] font-bold">Konsep</h3>
+          <p class="text-[.88rem] text-muted">Kami buat 2–3 arah desain beserta alasan di balik setiap bentuk dan warna.</p>
+        </li>
+        <li class="step reveal" style="--d:.25s">
+          <span class="step-num mb-6 grid h-[68px] w-[68px] place-items-center rounded-full border border-line bg-bg text-[.95rem] font-extrabold tracking-[.04em] text-accent">03</span>
+          <h3 class="text-[1.08rem] font-bold">Revisi</h3>
+          <p class="text-[.88rem] text-muted">Pilih satu konsep, kami sempurnakan detailnya sampai kamu benar-benar cocok.</p>
+        </li>
+        <li class="step reveal" style="--d:.35s">
+          <span class="step-num mb-6 grid h-[68px] w-[68px] place-items-center rounded-full border border-line bg-bg text-[.95rem] font-extrabold tracking-[.04em] text-accent">04</span>
+          <h3 class="text-[1.08rem] font-bold">Serah Terima</h3>
+          <p class="text-[.88rem] text-muted">File lengkap dikirim lewat Google Drive: JPG, PNG, PDF, dan vektor.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============================ PRICING ============================ -->
+  <section id="pricing" class="section py-[120px] max-md:py-[88px]">
+    <div class="mx-auto w-full max-w-page px-6">
+
+      <div class="mx-auto mb-16 max-w-[660px] text-center max-md:mb-11">
+        <span class="section-label reveal">05 — Harga</span>
+        <h2 class="reveal text-[clamp(1.9rem,3.6vw,2.85rem)] font-extrabold leading-[1.12] tracking-[-.02em]" style="--d:.06s">Harga jelas dari awal</h2>
+        <p class="reveal mt-4 text-[1.02rem] text-muted" style="--d:.12s">
+          Nggak ada biaya tersembunyi. Pilih paket sesuai kebutuhan, atau chat kami
+          kalau butuh yang custom.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 items-stretch gap-5 lg:grid-cols-3">
+
+        <article class="price-card reveal flex flex-col rounded-xl3 border border-line bg-surface p-[30px] pt-[34px] transition-all" style="--d:.06s">
+          <header>
+            <h3 class="text-[1.15rem] font-bold">Basic</h3>
+            <p class="mb-[22px] text-[.83rem] text-muted">Cocok buat coba-coba brand baru</p>
+          </header>
+          <div class="mb-[26px] flex items-baseline gap-0.5 text-[2.9rem] font-extrabold leading-none tracking-[-.04em]">
+            <span class="mr-1 text-base font-semibold text-muted">Rp</span>50<small class="ml-1 text-[1.05rem] font-semibold text-muted">rb</small>
+          </div>
+          <ul class="mb-[30px] grid gap-3">
+            <li class="tick text-[.89rem] text-muted">1 konsep desain</li>
+            <li class="tick text-[.89rem] text-muted">1 kali revisi</li>
+            <li class="tick text-[.89rem] text-muted">File JPG &amp; PNG</li>
+            <li class="tick text-[.89rem] text-muted">Pengerjaan 2 hari</li>
+          </ul>
+          <a href="#contact" class="btn-outline mt-auto inline-flex w-full items-center justify-center rounded-full px-[26px] py-[15px] text-[.95rem] font-semibold">Pilih Basic</a>
+        </article>
+
+        <article class="price-card price-card--featured reveal relative flex flex-col rounded-xl3 border p-[30px] pt-[34px] transition-all lg:-translate-y-2.5" style="--d:.14s">
+          <span class="badge absolute -top-[13px] left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-accent px-3.5 py-1.5 text-[.68rem] font-bold uppercase tracking-[.12em] text-onaccent">Paling dipilih</span>
+          <header>
+            <h3 class="text-[1.15rem] font-bold">Standar</h3>
+            <p class="mb-[22px] text-[.83rem] text-muted">Paling pas untuk UMKM &amp; online shop</p>
+          </header>
+          <div class="mb-[26px] flex items-baseline gap-0.5 text-[2.9rem] font-extrabold leading-none tracking-[-.04em]">
+            <span class="mr-1 text-base font-semibold text-muted">Rp</span>100<small class="ml-1 text-[1.05rem] font-semibold text-muted">rb</small>
+          </div>
+          <ul class="mb-[30px] grid gap-3">
+            <li class="tick text-[.89rem] text-muted">2 konsep desain</li>
+            <li class="tick text-[.89rem] text-muted">3 kali revisi</li>
+            <li class="tick text-[.89rem] text-muted">File JPG, PNG, PDF, vektor</li>
+            <li class="tick text-[.89rem] text-muted">Panduan warna dasar</li>
+            <li class="tick text-[.89rem] text-muted">Pengerjaan 2–3 hari</li>
+          </ul>
+          <a href="#contact" class="btn-primary mt-auto inline-flex w-full items-center justify-center rounded-full px-[26px] py-[15px] text-[.95rem] font-semibold">Pilih Standar</a>
+        </article>
+
+        <article class="price-card reveal flex flex-col rounded-xl3 border border-line bg-surface p-[30px] pt-[34px] transition-all" style="--d:.22s">
+          <header>
+            <h3 class="text-[1.15rem] font-bold">Premium</h3>
+            <p class="mb-[22px] text-[.83rem] text-muted">Untuk brand yang serius tampil beda</p>
+          </header>
+          <div class="mb-[26px] flex items-baseline gap-0.5 text-[2.9rem] font-extrabold leading-none tracking-[-.04em]">
+            <span class="mr-1 text-base font-semibold text-muted">Rp</span>200<small class="ml-1 text-[1.05rem] font-semibold text-muted">rb</small>
+          </div>
+          <ul class="mb-[30px] grid gap-3">
+            <li class="tick text-[.89rem] text-muted">3 konsep desain</li>
+            <li class="tick text-[.89rem] text-muted">Revisi kecil tak terbatas</li>
+            <li class="tick text-[.89rem] text-muted">File lengkap + mockup</li>
+            <li class="tick text-[.89rem] text-muted">Filosofi &amp; panduan brand</li>
+            <li class="tick text-[.89rem] text-muted">Pengerjaan 3 hari</li>
+          </ul>
+          <a href="#contact" class="btn-outline mt-auto inline-flex w-full items-center justify-center rounded-full px-[26px] py-[15px] text-[.95rem] font-semibold">Pilih Premium</a>
+        </article>
+      </div>
+
+      <p class="reveal mt-10 text-center text-[.84rem] text-muted">Pembayaran DP 50% di awal, sisanya setelah desain final. Transfer bank atau QRIS.</p>
+    </div>
+  </section>
+
+  <!-- ============================ TESTIMONIALS ============================ -->
+  <section id="testimonials" class="section border-y border-line bg-white/[.024] py-[120px] max-md:py-[88px]">
+    <div class="mx-auto w-full max-w-page px-6">
+
+      <div class="mx-auto mb-16 max-w-[660px] text-center max-md:mb-11">
+        <span class="section-label reveal">06 — Kata Mereka</span>
+        <h2 class="reveal text-[clamp(1.9rem,3.6vw,2.85rem)] font-extrabold leading-[1.12] tracking-[-.02em]" style="--d:.06s">Bukan kami yang bilang</h2>
+      </div>
+
+      <div id="testimonialSlider" class="reveal mx-auto max-w-[780px] overflow-hidden">
+        <div class="slider-track flex">
+          <blockquote class="slide m-0 rounded-xl3 border border-line bg-surface px-[46px] py-[44px] text-center">
+            <p class="mb-[26px] text-[1.14rem] leading-[1.72]">
+              “Awalnya cuma mau logo murah buat warung kopi, ternyata dikasih penjelasan kenapa warnanya dipilih. Sekarang pelanggan sering bilang brand-nya keliatan lebih niat.”
+            </p>
+            <footer class="flex flex-col gap-0.5">
+              <strong class="text-[.95rem]">Rifqi A.</strong>
+              <span class="text-[.8rem] text-muted">Kopi Senja — Yogyakarta</span>
+            </footer>
+          </blockquote>
+
+          <blockquote class="slide m-0 rounded-xl3 border border-line bg-surface px-[46px] py-[44px] text-center">
+            <p class="mb-[26px] text-[1.14rem] leading-[1.72]">
+              “Revisinya sabar banget, dikasih 3 opsi dan semuanya dijelasin. File vektornya rapi, jadi waktu cetak banner nggak pecah.”
+            </p>
+            <footer class="flex flex-col gap-0.5">
+              <strong class="text-[.95rem]">Nadia P.</strong>
+              <span class="text-[.8rem] text-muted">Lumine Skin — Surabaya</span>
+            </footer>
+          </blockquote>
+
+          <blockquote class="slide m-0 rounded-xl3 border border-line bg-surface px-[46px] py-[44px] text-center">
+            <p class="mb-[26px] text-[1.14rem] leading-[1.72]">
+              “Kami butuh logo buat event kampus dengan deadline mepet. Dua hari jadi, dan panitia lain sampai nanya bikin di mana.”
+            </p>
+            <footer class="flex flex-col gap-0.5">
+              <strong class="text-[.95rem]">Bagas W.</strong>
+              <span class="text-[.8rem] text-muted">Festa Kampus — Malang</span>
+            </footer>
+          </blockquote>
+        </div>
+
+        <div class="mt-7 flex items-center justify-center gap-[18px]">
+          <button class="slider-btn grid h-[42px] w-[42px] place-items-center rounded-full border border-line" data-dir="-1" aria-label="Sebelumnya">
+            <svg class="h-[18px] w-[18px]" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="slider-dots flex gap-2" id="sliderDots"></div>
+          <button class="slider-btn grid h-[42px] w-[42px] place-items-center rounded-full border border-line" data-dir="1" aria-label="Berikutnya">
+            <svg class="h-[18px] w-[18px]" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ FAQ ============================ -->
+  <section id="faq" class="section py-[120px] max-md:py-[88px]">
+    <div class="mx-auto grid w-full max-w-page grid-cols-1 items-start gap-16 px-6 lg:grid-cols-[.85fr_1.15fr] lg:gap-[72px]">
+
+      <div>
+        <span class="section-label reveal">07 — FAQ</span>
+        <h2 class="reveal text-[clamp(1.9rem,3.6vw,2.85rem)] font-extrabold leading-[1.12] tracking-[-.02em]" style="--d:.06s">Yang sering ditanya</h2>
+        <p class="reveal mt-4 text-muted" style="--d:.12s">Masih ada yang belum terjawab? Chat kami, dibalas manusia bukan bot.</p>
+        <a href="#contact" class="btn-ghost reveal mt-5 inline-flex items-center justify-center rounded-full px-[26px] py-[15px] text-[.95rem] font-semibold" style="--d:.18s">Tanya langsung</a>
+      </div>
+
+      <div class="grid gap-3">
+        <div class="faq-item reveal rounded-xl2 border border-line bg-surface" style="--d:.06s">
+          <button class="faq-q flex w-full items-center justify-between gap-5 px-6 py-[22px] text-left text-[.98rem] font-semibold tracking-[-.01em]" aria-expanded="false">
+            <span>Apakah desainnya benar-benar orisinal?</span><i aria-hidden="true"></i>
+          </button>
+          <div class="faq-a"><p>Ya. Semua logo digambar dari nol berdasarkan brief kamu, bukan hasil unduh atau template marketplace. Kami juga tidak menjual desain yang sama ke dua klien berbeda.</p></div>
+        </div>
+
+        <div class="faq-item reveal rounded-xl2 border border-line bg-surface" style="--d:.12s">
+          <button class="faq-q flex w-full items-center justify-between gap-5 px-6 py-[22px] text-left text-[.98rem] font-semibold tracking-[-.01em]" aria-expanded="false">
+            <span>Berapa lama pengerjaannya?</span><i aria-hidden="true"></i>
+          </button>
+          <div class="faq-a"><p>Rata-rata 2–3 hari kerja untuk satu logo, tergantung kompleksitas dan kecepatan revisi. Untuk kebutuhan mendesak bisa didiskusikan.</p></div>
+        </div>
+
+        <div class="faq-item reveal rounded-xl2 border border-line bg-surface" style="--d:.18s">
+          <button class="faq-q flex w-full items-center justify-between gap-5 px-6 py-[22px] text-left text-[.98rem] font-semibold tracking-[-.01em]" aria-expanded="false">
+            <span>File apa saja yang saya terima?</span><i aria-hidden="true"></i>
+          </button>
+          <div class="faq-a"><p>Paket Basic menerima JPG dan PNG. Paket Standar dan Premium menerima tambahan PDF siap cetak serta file vektor (AI/EPS) yang bisa diperbesar tanpa pecah.</p></div>
+        </div>
+
+        <div class="faq-item reveal rounded-xl2 border border-line bg-surface" style="--d:.24s">
+          <button class="faq-q flex w-full items-center justify-between gap-5 px-6 py-[22px] text-left text-[.98rem] font-semibold tracking-[-.01em]" aria-expanded="false">
+            <span>Bisa revisi berapa kali?</span><i aria-hidden="true"></i>
+          </button>
+          <div class="faq-a"><p>Basic 1 kali, Standar 3 kali, Premium revisi kecil tak terbatas. Revisi di luar paket tetap bisa, dengan biaya tambahan yang disepakati di awal.</p></div>
+        </div>
+
+        <div class="faq-item reveal rounded-xl2 border border-line bg-surface" style="--d:.3s">
+          <button class="faq-q flex w-full items-center justify-between gap-5 px-6 py-[22px] text-left text-[.98rem] font-semibold tracking-[-.01em]" aria-expanded="false">
+            <span>Bagaimana cara pembayarannya?</span><i aria-hidden="true"></i>
+          </button>
+          <div class="faq-a"><p>DP 50% saat brief disetujui, pelunasan setelah desain final kamu setujui. Bisa lewat transfer bank atau QRIS.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ CTA ============================ -->
+  <section id="contact" class="cta relative overflow-hidden border-t border-line py-[130px] text-center max-md:py-20">
+    <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+      <span class="orb orb-4 animate-drift"></span>
+      <span class="orb orb-5 animate-drift-slow"></span>
+    </div>
+
+    <div class="relative z-[2] mx-auto w-full max-w-page px-6">
+      <span class="section-label reveal">08 — Mulai</span>
+      <h2 class="reveal mx-auto mb-4 max-w-[22ch] text-[clamp(2rem,4.2vw,3.2rem)] font-extrabold leading-[1.1] tracking-[-.035em]" style="--d:.06s">
+        Brand kamu layak punya logo yang bikin orang berhenti scroll.
+      </h2>
+      <p class="reveal mx-auto mb-10 max-w-[52ch] text-muted" style="--d:.12s">
+        Konsultasi pertama gratis, tanpa kewajiban lanjut. Ceritakan idemu, kami bantu arahkan.
+      </p>
+
+      <div class="reveal mb-14 flex flex-wrap justify-center gap-3.5" style="--d:.18s">
+        <a href="https://wa.me/6281234567890?text=Halo%20IDIE%20CRAFT%20DESAIN%2C%20saya%20mau%20konsultasi%20logo" target="_blank" rel="noopener"
+           class="btn-primary inline-flex items-center justify-center gap-2.5 rounded-full px-[26px] py-[15px] text-[.95rem] font-semibold">
+          Chat WhatsApp
+          <svg class="h-[18px] w-[18px]" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="mailto:idiecraftdesain@gmail.com" class="btn-ghost inline-flex items-center justify-center rounded-full px-[26px] py-[15px] text-[.95rem] font-semibold">Kirim Email</a>
+      </div>
+
+      <div class="reveal flex flex-wrap justify-center gap-x-[46px] gap-y-5 border-t border-line pt-9 max-sm:flex-col max-sm:items-center" style="--d:.24s">
+        <div class="flex flex-col gap-1"><span class="text-[.7rem] uppercase tracking-[.18em] text-muted">WhatsApp</span><a href="https://wa.me/6281234567890" target="_blank" rel="noopener" class="text-[.95rem] font-semibold transition-colors hover:text-accent">08xx-xxxx-xxxx</a></div>
+        <div class="flex flex-col gap-1"><span class="text-[.7rem] uppercase tracking-[.18em] text-muted">Instagram</span><a href="https://instagram.com/idiecraft.desain" target="_blank" rel="noopener" class="text-[.95rem] font-semibold transition-colors hover:text-accent">@idiecraft.desain</a></div>
+        <div class="flex flex-col gap-1"><span class="text-[.7rem] uppercase tracking-[.18em] text-muted">Email</span><a href="mailto:idiecraftdesain@gmail.com" class="text-[.95rem] font-semibold transition-colors hover:text-accent">idiecraftdesain@gmail.com</a></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="border-t border-line bg-white/[.02] pb-[34px] pt-20">
+  <div class="mx-auto grid w-full max-w-page grid-cols-1 gap-9 px-6 sm:grid-cols-2 lg:grid-cols-[1.6fr_1fr_1fr_1fr] lg:gap-[46px]">
+
+    <div>
+      <a href="#hero" class="brand flex items-center gap-3 text-ink" aria-label="IDIE CRAFT DESAIN">
+        <svg class="brand-mark h-[34px] w-[34px]" viewBox="0 0 48 48" aria-hidden="true">
+          <path d="M17 6A18 18 0 0 1 17 42V6Z" fill="currentColor"/>
+          <rect x="11.5" y="6" width="4.5" height="36" fill="currentColor"/>
+        </svg>
+        <span class="flex flex-col leading-none">
+          <strong class="text-[.98rem] font-extrabold tracking-[.1em]">IDIE CRAFT</strong>
+          <em class="mt-[5px] text-[.52rem] not-italic tracking-[.42em] text-muted">— DESAIN —</em>
+        </span>
+      </a>
+      <p class="mt-5 max-w-[34ch] text-[.88rem] text-muted">Studio desain logo orisinal untuk UMKM, mahasiswa, dan brand yang baru tumbuh.</p>
+    </div>
+
+    <div class="flex flex-col gap-[11px]">
+      <h4 class="mb-1.5 text-[.74rem] uppercase tracking-[.18em] text-muted">Navigasi</h4>
+      <a href="#about" class="footer-link text-[.9rem]">Tentang</a>
+      <a href="#services" class="footer-link text-[.9rem]">Layanan</a>
+      <a href="#work" class="footer-link text-[.9rem]">Portofolio</a>
+      <a href="#pricing" class="footer-link text-[.9rem]">Harga</a>
+    </div>
+
+    <div class="flex flex-col gap-[11px]">
+      <h4 class="mb-1.5 text-[.74rem] uppercase tracking-[.18em] text-muted">Lainnya</h4>
+      <a href="#process" class="footer-link text-[.9rem]">Proses</a>
+      <a href="#faq" class="footer-link text-[.9rem]">FAQ</a>
+      <a href="#contact" class="footer-link text-[.9rem]">Kontak</a>
+      <a href="#testimonials" class="footer-link text-[.9rem]">Testimoni</a>
+    </div>
+
+    <div class="flex flex-col gap-[11px]">
+      <h4 class="mb-1.5 text-[.74rem] uppercase tracking-[.18em] text-muted">Sosial</h4>
+      <a href="https://instagram.com/idiecraft.desain" target="_blank" rel="noopener" class="footer-link text-[.9rem]">Instagram</a>
+      <a href="https://tiktok.com/@idiecraftdesain" target="_blank" rel="noopener" class="footer-link text-[.9rem]">TikTok</a>
+      <a href="https://wa.me/6281234567890" target="_blank" rel="noopener" class="footer-link text-[.9rem]">WhatsApp</a>
+    </div>
+  </div>
+
+  <div class="mx-auto mt-16 flex w-full max-w-page flex-wrap justify-between gap-3 border-t border-line px-6 pt-[26px] text-[.8rem] text-muted max-sm:flex-col">
+    <span>© <span id="year">2026</span> IDIE CRAFT DESAIN. Semua hak dilindungi.</span>
+    <span>Dirancang dengan teliti, bukan template.</span>
+  </div>
+</footer>
+
+<button id="toTop" class="to-top" aria-label="Kembali ke atas">
+  <svg class="h-[19px] w-[19px]" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
